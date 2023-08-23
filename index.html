@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APN Configuration Profile Generator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>APN Configuration Profile Generator</h1>
+  <form id="apnForm">
+    <label for="configName">Configuration Name:</label>
+    <input type="text" id="configName" required><br>
+
+    <label for="apn">Access Point Name (APN):</label>
+    <input type="text" id="apn" required><br>
+
+    <label for="authType">Authentication Type:</label>
+    <select id="authType">
+      <option value="none">None</option>
+      <option value="pap">PAP</option>
+      <option value="chap">CHAP</option>
+    </select><br>
+
+    <label for="apnUsername">APN User Name:</label>
+    <input type="text" id="apnUsername"><br>
+
+    <label for="apnPassword">APN Password:</label>
+    <input type="password" id="apnPassword"><br>
+
+    <label for="proxyServer">Proxy Server:</label>
+    <input type="text" id="proxyServer"><br>
+
+    <label for="port">Port:</label>
+    <input type="number" id="port"><br>
+
+    <label for="serverAddress">Server Address:</label>
+    <input type="text" id="serverAddress"><br>
+
+    <label for="protocol">Protocol:</label>
+    <input type="text" id="protocol"><br>
+
+    <label for="mcc">Mobile Country Code:</label>
+    <input type="text" id="mcc"><br>
+
+    <label for="mnc">Mobile Network Code:</label>
+    <input type="text" id="mnc"><br>
+
+    <label for="accessPointType">Access Point Type:</label>
+    <input type="text" id="accessPointType"><br>
+
+    <label for="mmsServer">MMS Server Address:</label>
+    <input type="text" id="mmsServer"><br>
+
+    <label for="mmsProxy">MMS Proxy Address:</label>
+    <input type="text" id="mmsProxy"><br>
+
+    <label for="mmsPort">MMS Port:</label>
+    <input type="number" id="mmsPort"><br>
+
+    <label for="roamingProtocol">Roaming Protocol:</label>
+    <input type="text" id="roamingProtocol"><br>
+
+    <label for="roamingAlwaysOn">Roaming Always On:</label>
+    <input type="checkbox" id="roamingAlwaysOn"><br>
+
+    <label for="useAsDefault">Use As Default APN:</label>
+    <input type="checkbox" id="useAsDefault"><br>
+
+    <label for="mvno">Mobile Virtual Network Operator:</label>
+    <input type="text" id="mvno"><br>
+
+    <button type="submit">Generate Profile</button>
+  </form>
+
+  <div id="downloadLink" style="display: none;">
+    <a id="profileLink" href="#" download="apn-profile.mobileconfig">Download Profile</a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
