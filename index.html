@@ -1,81 +1,156 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APN Configuration Profile Generator</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APN Configuration Profile Generator</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-  <h1>APN Configuration Profile Generator</h1>
-  <form id="apnForm">
-    <label for="configName">Configuration Name:</label>
-    <input type="text" id="configName" required><br>
 
-    <label for="apn">Access Point Name (APN):</label>
-    <input type="text" id="apn" required><br>
+<body class="bg-light">
 
-    <label for="authType">Authentication Type:</label>
-    <select id="authType">
-      <option value="none">None</option>
-      <option value="pap">PAP</option>
-      <option value="chap">CHAP</option>
-    </select><br>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">APN Configuration Profile Generator</h1>
 
-    <label for="apnUsername">APN User Name:</label>
-    <input type="text" id="apnUsername"><br>
+        <form id="apnForm" class="bg-white p-4 rounded shadow-sm">
 
-    <label for="apnPassword">APN Password:</label>
-    <input type="password" id="apnPassword"><br>
+            <!-- Configuration Name -->
+            <div class="form-group">
+                <label for="configName">Configuration Name:</label>
+                <input type="text" id="configName" name="configName" class="form-control" required>
+            </div>
 
-    <label for="proxyServer">Proxy Server:</label>
-    <input type="text" id="proxyServer"><br>
+            <!-- APN -->
+            <div class="form-group">
+                <label for="apn">Access Point Name (APN):</label>
+                <input type="text" id="apn" name="apn" class="form-control" required>
+            </div>
 
-    <label for="port">Port:</label>
-    <input type="number" id="port"><br>
+            <!-- Authentication Type -->
+            <div class="form-group">
+                <label for="authType">Authentication Type:</label>
+                <select id="authType" name="authType" class="form-control">
+                    <option value="none">None</option>
+                    <option value="pap">PAP</option>
+                    <option value="chap">CHAP</option>
+                </select>
+            </div>
 
-    <label for="serverAddress">Server Address:</label>
-    <input type="text" id="serverAddress"><br>
+            <!-- APN User Name -->
+            <div class="form-group">
+                <label for="apnUsername">APN User Name:</label>
+                <input type="text" id="apnUsername" name="apnUsername" class="form-control">
+            </div>
 
-    <label for="protocol">Protocol:</label>
-    <input type="text" id="protocol"><br>
+            <!-- APN Password -->
+            <div class="form-group">
+                <label for="apnPassword">APN Password:</label>
+                <input type="password" id="apnPassword" name="apnPassword" class="form-control">
+            </div>
 
-    <label for="mcc">Mobile Country Code:</label>
-    <input type="text" id="mcc"><br>
+            <!-- Proxy Server -->
+            <div class="form-group">
+                <label for="proxyServer">Proxy Server:</label>
+                <input type="text" id="proxyServer" name="proxyServer" class="form-control">
+            </div>
 
-    <label for="mnc">Mobile Network Code:</label>
-    <input type="text" id="mnc"><br>
+            <!-- Port -->
+            <div class="form-group">
+                <label for="port">Port:</label>
+                <input type="number" id="port" name="port" class="form-control">
+            </div>
 
-    <label for="accessPointType">Access Point Type:</label>
-    <input type="text" id="accessPointType"><br>
+            <!-- Server Address -->
+            <div class="form-group">
+                <label for="serverAddress">Server Address:</label>
+                <input type="text" id="serverAddress" name="serverAddress" class="form-control">
+            </div>
 
-    <label for="mmsServer">MMS Server Address:</label>
-    <input type="text" id="mmsServer"><br>
+            <!-- Protocol -->
+            <div class="form-group">
+                <label for="protocol">Protocol:</label>
+                <input type="text" id="protocol" name="protocol" class="form-control">
+            </div>
 
-    <label for="mmsProxy">MMS Proxy Address:</label>
-    <input type="text" id="mmsProxy"><br>
+            <!-- Mobile Country Code -->
+            <div class="form-group">
+                <label for="mcc">Mobile Country Code:</label>
+                <input type="text" id="mcc" name="mcc" class="form-control">
+            </div>
 
-    <label for="mmsPort">MMS Port:</label>
-    <input type="number" id="mmsPort"><br>
+            <!-- Mobile Network Code -->
+            <div class="form-group">
+                <label for="mnc">Mobile Network Code:</label>
+                <input type="text" id="mnc" name="mnc" class="form-control">
+            </div>
 
-    <label for="roamingProtocol">Roaming Protocol:</label>
-    <input type="text" id="roamingProtocol"><br>
+            <!-- Access Point Type -->
+            <div class="form-group">
+                <label for="accessPointType">Access Point Type:</label>
+                <input type="text" id="accessPointType" name="accessPointType" class="form-control">
+            </div>
 
-    <label for="roamingAlwaysOn">Roaming Always On:</label>
-    <input type="checkbox" id="roamingAlwaysOn"><br>
+            <!-- MMS Server Address -->
+            <div class="form-group">
+                <label for="mmsServer">MMS Server Address:</label>
+                <input type="text" id="mmsServer" name="mmsServer" class="form-control">
+            </div>
 
-    <label for="useAsDefault">Use As Default APN:</label>
-    <input type="checkbox" id="useAsDefault"><br>
+            <!-- MMS Proxy Address -->
+            <div class="form-group">
+                <label for="mmsProxy">MMS Proxy Address:</label>
+                <input type="text" id="mmsProxy" name="mmsProxy" class="form-control">
+            </div>
 
-    <label for="mvno">Mobile Virtual Network Operator:</label>
-    <input type="text" id="mvno"><br>
+            <!-- MMS Port -->
+            <div class="form-group">
+                <label for="mmsPort">MMS Port:</label>
+                <input type="number" id="mmsPort" name="mmsPort" class="form-control">
+            </div>
 
-    <button type="submit">Generate Profile</button>
-  </form>
+            <!-- Roaming Protocol -->
+            <div class="form-group">
+                <label for="roamingProtocol">Roaming Protocol:</label>
+                <input type="text" id="roamingProtocol" name="roamingProtocol" class="form-control">
+            </div>
 
-  <div id="downloadLink" style="display: none;">
-    <a id="profileLink" href="#" download="apn-profile.mobileconfig">Download Profile</a>
-  </div>
+            <!-- Roaming Always On -->
+            <div class="form-group">
+                <label for="roamingAlwaysOn">Roaming Always On:</label>
+                <input type="checkbox" id="roamingAlwaysOn" name="roamingAlwaysOn">
+            </div>
 
-  <script src="script.js"></script>
+            <!-- Use As Default APN -->
+            <div class="form-group">
+                <label for="useAsDefault">Use As Default APN:</label>
+                <input type="checkbox" id="useAsDefault" name="useAsDefault">
+            </div>
+
+            <!-- Mobile Virtual Network Operator -->
+            <div class="form-group">
+                <label for="mvno">Mobile Virtual Network Operator:</label>
+                <input type="text" id="mvno" name="mvno" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block mt-3">Generate Profile</button>
+
+        </form>
+
+        <div id="downloadLink" style="display: none;" class="mt-4 text-center">
+            <a id="profileLink" href="#" download="apn-profile.mobileconfig" class="btn btn-success">Download Profile</a>
+        </div>
+    </div>
+
+    <!-- Optional Bootstrap JS and its dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Your JS File -->
+    <script src="script.js"></script>
 </body>
+
 </html>
